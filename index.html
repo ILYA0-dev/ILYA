@@ -1,0 +1,1007 @@
+<!-- Copyright 2026 ILYA / JLAL -->
+<!-- Project: ILYA / JLAL Platform -->
+<!-- All Rights Reserved to ILYA -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>ILYA / JLAL</title>
+
+<meta name="description" content="ILYA / JLAL - Official platforms and community links.">
+<meta name="keywords" content="ILYA, JLAL, Zad Alsairin, Telegram, YouTube, Instagram, Pinterest">
+<meta name="author" content="ILYA">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<meta http-equiv="Content-Language" content="en,ar">
+<link rel="canonical" href="https://ilya-jlal.com/">
+<link rel="icon" type="image/png" href="img/logo.png?v=2">
+<link rel="shortcut icon" type="image/png" href="img/logo.png?v=2">
+<link rel="apple-touch-icon" href="img/logo.png?v=2">
+
+<meta name="theme-color" content="#060202">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ilya-jlal.com/">
+<meta property="og:title" content="ILYA / JLAL">
+<meta property="og:description" content="ILYA / JLAL - Official platforms and community links.">
+<meta property="og:image" content="img/logo.png">
+<meta property="og:site_name" content="ILYA / JLAL">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_AR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ILYA / JLAL">
+<meta name="twitter:description" content="ILYA / JLAL - Official platforms and community links.">
+<meta name="twitter:image" content="img/logo.png">
+
+<meta name="application-name" content="ILYA / JLAL">
+<meta name="creator" content="ILYA">
+<meta name="publisher" content="ILYA">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ilya-jlal.com/#organization",
+      "name": "ILYA / JLAL",
+      "alternateName": ["ILYA", "JLAL", "\u0625\u064a\u0644\u064a\u0627", "\u062c\u0644\u0627\u0644"],
+      "url": "https://ilya-jlal.com",
+      "logo": { "@type": "ImageObject", "url": "img/logo.png" },
+      "founder": { "@type": "Person", "name": "ILYA / JLAL" },
+      "description": "Official platforms and community links for ILYA / JLAL.",
+      "sameAs": [
+        "https://t.me/zcn_z",
+        "https://t.me/zcs_z",
+        "https://youtube.com/@zcs_z",
+        "https://instagram.com/zcs_zz",
+        "https://pinterest.com/zcs_z"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ilya-jlal.com/#website",
+      "name": "ILYA / JLAL",
+      "url": "https://ilya-jlal.com",
+      "publisher": { "@id": "https://ilya-jlal.com/#organization" },
+      "inLanguage": ["en", "ar"]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.simpleicons.org" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Tajawal:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="img/ILYA.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="img/H.jpg">
+<link rel="preload" as="image" href="img/v.jpg">
+
+<style>
+  :root{
+    --void:      #060202;
+    --void-2:    #0c0404;
+    --red:       #a5121b;
+    --red-deep:  #5c0a10;
+    --red-pale:  #f2dcdc;
+    --red-dim:   #3a1012;
+    --red-hot:   #ff4550;
+
+    --font-en:      'JetBrains Mono', ui-monospace, monospace;
+    --font-ar-body: 'Tajawal', -apple-system, sans-serif;
+    --font-ar-disp: 'El Messiri', 'Tajawal', sans-serif;
+    --font-body:    'JetBrains Mono', -apple-system, 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
+    --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+    --ease: cubic-bezier(.16,.84,.44,1);
+    --gap:  clamp(12px, 3vw, 28px);
+  }
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html{ color-scheme: dark; }
+
+  html, body{
+    background: var(--void);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+    touch-action: pan-y;
+  }
+
+  body{
+    min-height: 100vh;
+    min-height: 100dvh;
+    color: var(--red-pale);
+    font-family: var(--font-body);
+    position: relative;
+  }
+
+  body.lang-ar{ font-family: var(--font-ar-body); }
+  body.lang-ar .mono-text{ font-family: var(--font-ar-body); letter-spacing: 0 !important; }
+  body.lang-ar .display-text{ font-family: var(--font-ar-disp) !important; }
+
+  /* ---------- background media layer ---------- */
+  .bg-slot{
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 0;
+    overflow: hidden;
+    background: var(--void);
+    pointer-events: none;
+  }
+  .media-poster, .media-video{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+  .media-poster{ z-index: 1; }
+  .media-video{
+    z-index: 2;
+    opacity: 0;
+    transition: opacity .5s var(--ease);
+  }
+  .media-video.is-visible{ opacity: 1; }
+
+  /* full-bleed ambient fill so the background never shows flat bars —
+     a cheap, static blurred copy fills the edges while the real frame
+     stays fully visible and uncropped on top */
+  .bg-slot .media-fill{
+    position: absolute;
+    inset: -6%;
+    width: 112%;
+    height: 112%;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(46px) saturate(1.35) brightness(.62);
+    transform: translateZ(0);
+    z-index: 0;
+  }
+
+  .ambient{
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+  }
+  @media (min-width: 900px){
+    .ambient{
+      opacity: 1;
+      background:
+        radial-gradient(40% 60% at 10% 50%, rgba(165,18,27,.12), transparent 70%),
+        radial-gradient(40% 60% at 90% 50%, rgba(165,18,27,.12), transparent 70%),
+        radial-gradient(60% 40% at 50% 100%, rgba(92,10,16,.10), transparent 70%);
+    }
+  }
+
+  .backdrop-tint{
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(6,2,2,.35) 0%, rgba(6,2,2,.12) 30%, rgba(6,2,2,.5) 100%),
+      radial-gradient(ellipse 90% 70% at 50% 10%, rgba(92,10,16,.15), transparent 60%);
+  }
+
+  .vignette{
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 68% 58% at 50% 50%, transparent 50%, rgba(6,2,2,.20) 85%, rgba(6,2,2,.38) 100%);
+  }
+
+  .grain{
+    position: fixed;
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
+    opacity: .045;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  @keyframes spin{ to{ transform: translate(-50%,-50%) rotate(360deg); } }
+  @keyframes spinSimple{ to{ transform: rotate(360deg); } }
+
+  /* ---------- stage / centering ---------- */
+  .stage{
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--gap);
+    padding-top: max(var(--gap), env(safe-area-inset-top));
+    padding-bottom: max(var(--gap), env(safe-area-inset-bottom));
+    padding-left: max(var(--gap), env(safe-area-inset-left));
+    padding-right: max(var(--gap), env(safe-area-inset-right));
+  }
+
+  /* ---------- card ---------- */
+  .card{
+    position: relative;
+    width: min(90vw, 380px);
+
+    --pad-x: clamp(16px, 4vw, 24px);
+    --pad-top: clamp(20px, 5vw, 30px);
+
+    background:
+      linear-gradient(180deg, rgba(14,4,4,.035), rgba(6,2,2,.05)),
+      radial-gradient(ellipse 130% 60% at 50% 0%, rgba(165,18,27,.05), transparent 62%);
+    border-radius: 24px;
+    overflow: hidden;
+
+    padding: var(--pad-top) var(--pad-x) clamp(16px, 4vw, 22px);
+
+    border: 1px solid rgba(165,18,27,.20);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.45);
+
+    opacity: 0;
+    transform: translateY(14px) scale(.98);
+    animation: cardIn .7s var(--ease) forwards;
+  }
+
+  @keyframes cardIn{
+    from{ opacity: 0; transform: translateY(14px) scale(.98); }
+    to{ opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* animated ring border — GPU-cheap: rotation is a transform on an inner
+     layer, the mask itself never repaints */
+  .card .ring{
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.4px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 3;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: .8;
+    animation: ringPulse 6s ease-in-out infinite;
+  }
+  .card .ring-spin{
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 220%;
+    height: 220%;
+    transform: translate(-50%,-50%) rotate(0deg);
+    background: conic-gradient(from 0deg at 50% 50%,
+      transparent 0%, rgba(255,255,255,.75) 8%, rgba(165,18,27,.7) 18%,
+      transparent 40%, transparent 60%, rgba(165,18,27,.55) 82%,
+      rgba(255,255,255,.75) 92%, transparent 100%);
+    animation: spin 14s linear infinite;
+    will-change: transform;
+  }
+  @keyframes ringPulse{ 0%,100%{ opacity: .6; } 50%{ opacity: .85; } }
+
+  /* language toggle */
+  .lang-toggle{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(165,18,27,.10);
+    border: 1px solid rgba(165,18,27,.32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: .6;
+    transition: opacity .25s var(--ease), transform .25s var(--ease), background .25s var(--ease);
+    z-index: 5;
+  }
+  .lang-toggle:hover{ opacity: 1; transform: scale(1.08); background: rgba(165,18,27,.2); }
+  .lang-toggle:active{ transform: scale(.94); }
+  .lang-toggle svg{ width: 15px; height: 15px; }
+  body.lang-ar .lang-toggle{ left: auto; right: 12px; }
+
+  /* ---------- top media (card header video) ---------- */
+  .top-slot{
+    position: relative;
+    width: calc(100% + (2 * var(--pad-x)));
+    margin: calc(-1 * var(--pad-top)) calc(-1 * var(--pad-x)) 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    z-index: 0;
+    background: var(--void-2);
+  }
+  .top-slot::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background: linear-gradient(180deg, rgba(6,2,2,0) 58%, rgba(6,2,2,.7) 100%);
+    pointer-events: none;
+  }
+
+  .brand{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .mark{
+    position: relative;
+    width: clamp(92px, 24vw, 128px);
+    height: clamp(92px, 24vw, 128px);
+    margin-top: calc(-1 * clamp(46px, 12vw, 64px));
+    margin-bottom: 14px;
+    border-radius: 50%;
+    isolation: isolate;
+    z-index: 1;
+    border: 3px solid var(--void);
+    box-shadow: 0 4px 18px rgba(0,0,0,.5), 0 0 0 1px rgba(165,18,27,.25);
+    overflow: hidden;
+    background: radial-gradient(circle at 30% 20%, #260808, var(--void-2) 70%);
+  }
+  .mark .media-poster, .mark .media-video{ border-radius: 50%; }
+
+  .sub{
+    font-size: clamp(.8rem, 1.6vw + .5rem, .92rem);
+    font-weight: 400;
+    line-height: 1.65;
+    max-width: 36ch;
+    text-align: center;
+    unicode-bidi: plaintext;
+    background: linear-gradient(225deg, #fff 0%, var(--red) 40%, #fff 70%, var(--red) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: goldMove 6s linear infinite;
+    filter: drop-shadow(0 1px 6px rgba(0,0,0,.85));
+  }
+  body.lang-ar .sub{ font-family: var(--font-ar-disp); font-weight: 500; }
+
+  .divider{
+    border: none;
+    height: 1px;
+    margin: 12px 0;
+    background: linear-gradient(90deg, transparent, var(--red-dim) 15%, var(--red-dim) 85%, transparent);
+  }
+
+  .section-title{
+    font-family: var(--font-mono);
+    font-size: clamp(.62rem, 1vw + .4rem, .72rem);
+    font-weight: 600;
+    letter-spacing: .06em;
+    margin: 4px 4px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+
+    background: linear-gradient(225deg, #ffffff 0%, #ffffff 35%, var(--red) 50%, #ffffff 65%, var(--red-pale) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: goldMove 5s linear infinite;
+    filter: drop-shadow(0 1px 5px rgba(0,0,0,.85));
+  }
+  body.lang-ar .section-title{ font-family: var(--font-ar-disp); font-weight: 600; letter-spacing: 0; }
+
+  @keyframes goldMove{ to{ background-position: 200% center; } }
+
+  .section-title::before{
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 4px 1px rgba(165,18,27,.4);
+    flex-shrink: 0;
+  }
+
+  .section-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 6px 0 10px;
+  }
+  .section-title:first-child{ margin-right: clamp(14px, 4vw, 60px); }
+  .section-title:last-child{ margin-left: clamp(14px, 4vw, 60px); }
+  .section-line{
+    width: 1px;
+    height: 14px;
+    background: linear-gradient(transparent, var(--red), transparent);
+    flex-shrink: 0;
+  }
+  .center-brand{ margin-left: 10px; margin-right: 10px; }
+
+  .links{ display: flex; flex-direction: column; gap: 8px; }
+
+  .links a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    padding: 11px 14px;
+
+    background: linear-gradient(180deg, rgba(12,4,4,.5), rgba(8,3,3,.42));
+    border: 1px solid var(--red-dim);
+    color: var(--red-pale);
+    font-family: var(--font-body);
+    font-size: clamp(.76rem, 1vw + .5rem, .85rem);
+    font-weight: 500;
+    text-decoration: none;
+    text-shadow: 0 1px 4px rgba(0,0,0,.7);
+    border-radius: 13px;
+    letter-spacing: .1px;
+    overflow: hidden;
+    isolation: isolate;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: rise .55s var(--ease) forwards;
+    transition: border-color .3s var(--ease), color .3s var(--ease), transform .25s var(--ease), box-shadow .35s var(--ease), background .3s var(--ease);
+    cursor: pointer;
+  }
+  body.lang-ar .links a{ font-family: var(--font-ar-body); font-weight: 500; }
+
+  @keyframes rise{ to{ opacity: 1; transform: translateY(0); } }
+
+  .links a::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(120deg, transparent 30%, rgba(165,18,27,.18) 48%, rgba(255,69,80,.24) 52%, transparent 70%);
+    background-size: 220% 100%;
+    background-position: 150% 0;
+    transition: background-position .7s var(--ease);
+  }
+
+  .links a:hover, .links a:focus-visible{
+    border-color: var(--red);
+    color: var(--red-hot);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -10px rgba(165,18,27,.4), inset 0 1px 0 rgba(242,220,220,.08);
+  }
+  .links a:hover::before, .links a:focus-visible::before{ background-position: -50% 0; }
+  .links a:active{ transform: translateY(0) scale(.98); }
+  .links a:focus-visible{ outline: 2px solid var(--red); outline-offset: 2px; }
+
+  .links a .icon-wrap{
+    position: relative;
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red-hot);
+  }
+  .links a .ic{
+    width: 17px;
+    height: 17px;
+    opacity: .92;
+    transition: opacity .25s var(--ease), transform .25s var(--ease), filter .3s var(--ease);
+  }
+  .links a:hover .ic{ opacity: 1; }
+
+  .links a .spinner{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(.7);
+    transition: opacity .25s var(--ease), transform .25s var(--ease);
+    animation: spinSimple .75s linear infinite;
+  }
+
+  .ic-telegram{ filter: drop-shadow(0 0 4px rgba(42,171,238,.4)); }
+  .ic-youtube{ filter: drop-shadow(0 0 4px rgba(255,32,32,.4)); }
+  .ic-instagram{ filter: drop-shadow(0 0 4px rgba(225,48,108,.4)); }
+  .ic-pinterest{ filter: drop-shadow(0 0 4px rgba(230,0,35,.4)); }
+  .links a:hover .ic-telegram{ filter: drop-shadow(0 0 7px rgba(42,171,238,.65)); }
+  .links a:hover .ic-youtube{ filter: drop-shadow(0 0 7px rgba(255,32,32,.65)); }
+  .links a:hover .ic-instagram{ filter: drop-shadow(0 0 7px rgba(225,48,108,.65)); }
+  .links a:hover .ic-pinterest{ filter: drop-shadow(0 0 7px rgba(230,0,35,.65)); }
+
+  .links a .zad-icon{
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(15%) sepia(85%) saturate(3800%) hue-rotate(348deg) brightness(95%) contrast(105%)
+            drop-shadow(0 0 3px rgba(255,69,80,.35));
+  }
+
+  .links a.featured{
+    background: linear-gradient(180deg, rgba(165,18,27,.16), rgba(20,4,4,.22));
+    border-color: var(--red-deep);
+  }
+  .links a.featured:hover{
+    box-shadow: 0 12px 28px -10px rgba(165,18,27,.5), inset 0 1px 0 rgba(242,220,220,.12);
+  }
+
+  .links a:nth-child(1){ animation-delay: .30s; }
+  .links a:nth-child(2){ animation-delay: .36s; }
+  .links a:nth-child(3){ animation-delay: .42s; }
+  .links a:nth-child(4){ animation-delay: .48s; }
+  .links a:nth-child(5){ animation-delay: .54s; }
+  .links a:nth-child(6){ animation-delay: .60s; }
+  .links a:nth-child(7){ animation-delay: .66s; }
+  .links a:nth-child(8){ animation-delay: .72s; }
+
+  /* click-to-open feedback: the button never disappears — icon morphs
+     into a spinner while a slim progress line fills, then it settles
+     back smoothly once the link has opened */
+  .links a.opening{
+    pointer-events: none;
+    border-color: var(--red);
+    color: var(--red-hot);
+    box-shadow: 0 10px 24px -8px rgba(165,18,27,.45);
+  }
+  .links a.opening .ic{ opacity: 0; transform: scale(.55); }
+  .links a.opening .spinner{ opacity: 1; transform: scale(1); }
+
+  .links a .progress{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--red), var(--red-hot));
+    opacity: 0;
+    transition: width 1s linear, opacity .3s var(--ease);
+  }
+  .links a.opening .progress{ opacity: 1; width: 100%; }
+  .links a.opened .progress{ opacity: 0; transition: opacity .4s var(--ease); }
+  .links a.opened{ transition: border-color .5s var(--ease), color .5s var(--ease), box-shadow .5s var(--ease); }
+
+  .footer{
+    font-family: var(--font-mono);
+    font-size: .66rem;
+    text-align: center;
+    unicode-bidi: plaintext;
+    margin-top: 20px;
+    letter-spacing: .03em;
+    opacity: 0;
+    display: block;
+    background: linear-gradient(225deg, #fff 0%, var(--red) 40%, #fff 70%, var(--red) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rise .55s var(--ease) .76s forwards, goldMove 6s linear infinite;
+    filter: drop-shadow(0 1px 4px rgba(0,0,0,.85));
+  }
+
+  .visitor-counter{
+    margin: 12px auto 0;
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(10,3,3,.4);
+    border: 1px solid rgba(165,18,27,.18);
+    cursor: pointer;
+    user-select: none;
+    transition: background .25s var(--ease), transform .2s var(--ease);
+    opacity: 0;
+    animation: rise .55s var(--ease) .88s forwards;
+  }
+  .visitor-counter:hover{ background: rgba(165,18,27,.07); transform: translateY(-1px); }
+  .visitor-counter:active{ transform: translateY(0) scale(.96); }
+  .visitor-count{
+    font-family: var(--font-mono);
+    font-size: .74rem;
+    font-weight: 700;
+    background: linear-gradient(225deg, #fff, #ffdede, #fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: goldMove 5s linear infinite;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,.85));
+  }
+  .visitor-label{
+    font-family: var(--font-mono);
+    font-size: .52rem;
+    letter-spacing: .08em;
+    color: #fff;
+    opacity: .82;
+    text-shadow: 0 1px 3px rgba(0,0,0,.85);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+    }
+    .card, .links a, .footer, .visitor-counter{ opacity: 1; transform: none; animation: none; }
+  }
+
+  @media (hover: none){ .links a:hover{ transform: none; } }
+
+  html, body{ cursor: url("cursor/default.svg") 6 2, default; }
+
+  a, button, [role="button"], input[type="button"], input[type="submit"], input[type="reset"]{
+    cursor: url("cursor/pointer.svg") 12 4, pointer;
+  }
+  [draggable="true"], .drag{ cursor: url("cursor/pointer.svg") 16 16, grab; }
+  .loading, .loading *, [aria-busy="true"]{ cursor: url("cursor/wait.svg") 16 16, wait; }
+  .disabled, .disabled *, :disabled{ cursor: url("cursor/no.svg") 16 16, not-allowed; }
+  .move, [data-move]{ cursor: url("cursor/move.svg") 16 16, move; }
+  .cross, canvas, .crosshair{ cursor: url("cursor/cross.svg") 16 16, crosshair; }
+  .account-help{ cursor: url("cursor/dark.svg") 16 16, help !important; }
+  .zad{ cursor: url("cursor/halagpt.svg") 16 16, help !important; }
+
+  /* ---------- desktop refinement — the card gains room to breathe
+     instead of just floating small in empty space ---------- */
+  @media (min-width: 700px){
+    .card{ width: min(62vw, 480px); }
+    .links a{ padding: 12px 18px; }
+  }
+  @media (min-width: 1000px){
+    .card{ width: min(46vw, 540px); }
+  }
+  @media (min-width: 1440px){
+    .card{ width: min(34vw, 580px); }
+  }
+  @media (min-width: 1900px){
+    .card{ width: min(28vw, 620px); }
+  }
+
+  *::selection{ background: rgba(165,18,27,.4); color: white; }
+</style>
+</head>
+<body>
+
+<div class="bg-slot" id="bgSlot" aria-hidden="true">
+  <img class="media-fill" id="bgPosterFill" src="img/ILYA.jpg" alt="">
+  <img class="media-poster" id="bgPoster" src="img/ILYA.jpg" alt="" fetchpriority="high">
+  <video class="media-video" id="bgVideo" muted loop playsinline preload="auto"
+         disablePictureInPicture disableRemotePlayback
+         controlsList="nodownload noremoteplayback nofullscreen noplaybackrate"
+         oncontextmenu="return false;" draggable="false"></video>
+</div>
+<div class="ambient" aria-hidden="true"></div>
+<div class="backdrop-tint" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="stage">
+  <main class="card">
+    <span class="ring" aria-hidden="true"><span class="ring-spin"></span></span>
+
+    <div class="top-slot" id="topSlot" aria-hidden="true">
+      <img class="media-poster" src="img/H.jpg" alt="">
+      <video class="media-video" id="topVideo" muted loop playsinline preload="auto"
+             disablePictureInPicture disableRemotePlayback
+             controlsList="nodownload noremoteplayback nofullscreen noplaybackrate"
+             oncontextmenu="return false;" draggable="false"></video>
+    </div>
+
+    <button class="lang-toggle" id="langToggle" aria-label="Change language" title="EN / AR">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#f2dcdc" stroke-width="1.6">
+        <circle cx="12" cy="12" r="9.2"/>
+        <path d="M2.8 12h18.4M12 2.8c2.6 2.6 4 6 4 9.2s-1.4 6.6-4 9.2c-2.6-2.6-4-6-4-9.2s1.4-6.6 4-9.2Z"/>
+      </svg>
+    </button>
+
+    <div class="brand">
+      <div class="mark" id="markSlot">
+        <img class="media-poster" src="img/v.jpg" alt="ILYA" onerror="this.style.display='none';">
+        <video class="media-video" id="markVideo" muted loop playsinline preload="auto"
+               disablePictureInPicture disableRemotePlayback
+               controlsList="nodownload noremoteplayback nofullscreen noplaybackrate"
+               oncontextmenu="return false;" draggable="false"></video>
+      </div>
+      <p class="sub mono-text display-text" id="subText" data-en="The official ILYA / JLAL platforms" data-ar="المنصات الرسمية لـ ILYA / JLAL"></p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="section-head">
+      <p class="section-title mono-text" data-en="Community" data-ar="مجتمع"></p>
+      <span class="section-line"></span>
+      <p class="section-title center-brand mono-text" data-en="ILYA / JLAL" data-ar="جلال / إيليا"></p>
+      <span class="section-line"></span>
+      <p class="section-title mono-text" data-en="Ecosystem" data-ar="منظومة"></p>
+    </div>
+
+    <nav class="links" id="linksNav">
+      <a href="https://youtube.com/@zcs_z" target="_blank" rel="noopener" data-open="1">
+        <img class="ic ic-youtube" src="https://cdn.simpleicons.org/youtube" alt="">
+        <span class="mono-text" data-en="YouTube" data-ar="يوتيوب"></span>
+      </a>
+
+      <a href="https://instagram.com/zcs_zz" target="_blank" rel="noopener" data-open="1">
+        <img class="ic ic-instagram" src="https://cdn.simpleicons.org/instagram" alt="">
+        <span class="mono-text" data-en="Instagram" data-ar="انستغرام"></span>
+      </a>
+
+      <a href="https://t.me/zcn_z" target="_blank" rel="noopener" data-open="1">
+        <img class="ic ic-telegram" src="https://cdn.simpleicons.org/telegram" alt="">
+        <span class="mono-text" data-en="Telegram Channel" data-ar="قناة تيليجرام"></span>
+      </a>
+
+      <a href="https://pinterest.com/zcs_z" target="_blank" rel="noopener" data-open="1">
+        <img class="ic ic-pinterest" src="https://cdn.simpleicons.org/pinterest" alt="">
+        <span class="mono-text" data-en="Pinterest" data-ar="بنترست"></span>
+      </a>
+
+      <hr class="divider">
+
+      <a href="https://t.me/zcs_z" target="_blank" rel="noopener" data-open="1">
+        <img class="ic ic-telegram" src="https://cdn.simpleicons.org/telegram" alt="">
+        <span class="mono-text" data-en="Telegram Account" data-ar="حساب تيليجرام"></span>
+      </a>
+
+      <hr class="divider">
+
+      <a class="zad featured" href="https://zad3.pages.dev/" target="_blank" rel="noopener" data-open="1">
+        <img class="ic zad-icon" src="img/zad_alsairin.png" alt="">
+        <span class="mono-text" data-en="Zad Alsairin" data-ar="زاد السائرين"></span>
+      </a>
+    </nav>
+
+    <p class="footer mono-text" id="footerText" data-en="&#169; 2026 ILYA / JLAL" data-ar="&#169; 2026 ILYA / JLAL"></p>
+
+    <div class="visitor-counter" id="visitorBtn" title="Visitors">
+      <span class="visitor-count mono-text" id="visitorCount" data-en="0" data-ar="0"></span>
+      <span class="visitor-label mono-text" data-en="Visitors" data-ar="زوار"></span>
+    </div>
+
+  </main>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============== language ============== */
+  function toMonoFont(str){
+    return String(str).replace(/[A-Za-z0-9]/g, function(ch){
+      var code = ch.charCodeAt(0);
+      if(code>=65 && code<=90) return String.fromCodePoint(0x1D670 + (code-65));
+      if(code>=97 && code<=122) return String.fromCodePoint(0x1D68A + (code-97));
+      if(code>=48 && code<=57) return String.fromCodePoint(0x1D7F6 + (code-48));
+      return ch;
+    });
+  }
+  window.__toMonoFont = toMonoFont;
+
+  var currentLang = "en";
+  function applyLang(lang){
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
+    document.body.classList.toggle("lang-ar", lang === "ar");
+
+    document.querySelectorAll(".mono-text").forEach(function(el){
+      if(el.id === "visitorCount"){ return; }
+      var raw = el.dataset[lang] !== undefined ? el.dataset[lang] : el.dataset.en;
+      el.textContent = (lang === "en") ? toMonoFont(raw) : raw;
+    });
+    renderVisitorCount();
+  }
+
+  document.getElementById("langToggle").addEventListener("click", function(){
+    applyLang(currentLang === "en" ? "ar" : "en");
+  });
+
+  /* ============== light, one-time media loading ==============
+     each slot shows a static poster instantly, then fades in a
+     single video once it's actually ready to play. quality for the
+     background is decided ONCE at startup (never swapped mid-session,
+     which is what used to cause stutter/double-downloads) using a
+     conservative device/network heuristic. the header and mark clips
+     are tiny already, so they always use one light version — no
+     second "upgrade" fetch competing for bandwidth or CPU. */
+
+  function pickQuality(){
+    var c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if(c){
+      if(c.saveData) return "lo";
+      if(c.effectiveType && !/4g/.test(c.effectiveType)) return "lo";
+      if(typeof c.downlink === "number" && c.downlink > 0 && c.downlink < 3) return "lo";
+      return "hi";
+    }
+    // no Network Information API (all of iOS Safari, some desktop
+    // browsers) — fall back to a conservative device/viewport guess.
+    if(navigator.deviceMemory && navigator.deviceMemory <= 4) return "lo";
+    if(navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) return "lo";
+    return window.innerWidth >= 900 ? "hi" : "lo";
+  }
+
+  function playSafe(v){
+    var p = v.play();
+    if(p && typeof p.catch === "function"){ p.catch(function(){}); }
+  }
+
+  function initVideo(videoEl, src){
+    var onReady = function(){
+      videoEl.removeEventListener("loadeddata", onReady);
+      videoEl.classList.add("is-visible");
+      playSafe(videoEl);
+    };
+    videoEl.addEventListener("loadeddata", onReady);
+    videoEl.addEventListener("error", function(){
+      // missing/failed file — silently keep the static poster, never hang
+      videoEl.classList.remove("is-visible");
+    });
+    videoEl.src = src;
+    videoEl.load();
+  }
+
+  var bgQuality = pickQuality();
+
+  /* -- background video (orientation aware, quality fixed for the session) -- */
+  var bgVideo = document.getElementById("bgVideo");
+  var bgPoster = document.getElementById("bgPoster");
+  var bgPosterFill = document.getElementById("bgPosterFill");
+  var bgMode = null;
+  function updateBg(){
+    var isPortrait = window.matchMedia("(orientation: portrait)").matches;
+    var mode = isPortrait ? "G" : "ILYA";
+    if(mode === bgMode) return;
+    var firstRun = bgMode === null;
+    bgMode = mode;
+    bgPoster.src = "img/" + mode + ".jpg";
+    bgPosterFill.src = "img/" + mode + ".jpg";
+    var src = "img/" + mode + "-" + bgQuality + ".mp4";
+    if(firstRun){
+      initVideo(bgVideo, src);
+    } else {
+      bgVideo.classList.remove("is-visible");
+      setTimeout(function(){ initVideo(bgVideo, src); }, 260);
+    }
+  }
+  updateBg();
+
+  function debounce(fn, wait){
+    var t;
+    return function(){
+      clearTimeout(t);
+      t = setTimeout(fn, wait);
+    };
+  }
+  window.addEventListener("resize", debounce(updateBg, 200));
+  window.addEventListener("orientationchange", debounce(updateBg, 200));
+
+  /* -- header banner + brand mark: tiny, single quality, started
+     slightly after the background so the initial load doesn't spike
+     three decoders at once -- */
+  setTimeout(function(){
+    initVideo(document.getElementById("topVideo"), "img/H-hi.mp4");
+  }, 220);
+  setTimeout(function(){
+    initVideo(document.getElementById("markVideo"), "img/v-hi.mp4");
+  }, 380);
+
+  document.querySelectorAll("video, img").forEach(function(el){
+    el.setAttribute("draggable", "false");
+    el.addEventListener("contextmenu", function(e){ e.preventDefault(); });
+  });
+
+  /* ============== link buttons: elegant open feedback ==============
+     the button itself never disappears — the icon smoothly morphs
+     into a spinner while a slim progress line fills over ~1s, then
+     everything eases back to its resting state once the link opens. */
+  document.querySelectorAll(".links a").forEach(function(a){
+    var icon = a.querySelector("img.ic");
+    if(!icon) return;
+
+    var wrap = document.createElement("span");
+    wrap.className = "icon-wrap";
+    icon.parentNode.insertBefore(wrap, icon);
+    wrap.appendChild(icon);
+
+    var spinner = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    spinner.setAttribute("viewBox", "0 0 24 24");
+    spinner.setAttribute("class", "spinner");
+    spinner.innerHTML = '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="42" stroke-dashoffset="14"></circle>';
+    wrap.appendChild(spinner);
+
+    var progress = document.createElement("span");
+    progress.className = "progress";
+    a.appendChild(progress);
+
+    a.addEventListener("click", function(e){
+      e.preventDefault();
+      if(a.classList.contains("opening")) return;
+      var href = a.getAttribute("href");
+      a.classList.add("opening");
+      setTimeout(function(){
+        window.open(href, "_blank", "noopener");
+        a.classList.remove("opening");
+        a.classList.add("opened");
+        setTimeout(function(){ a.classList.remove("opened"); }, 400);
+      }, 1000);
+    });
+  });
+
+  /* ============== visitor counter ============== */
+  var rawCount = 0;
+  var revealTimer = null;
+  var isRevealed = false;
+
+  function formatCompact(n){
+    if(n < 1000) return String(n);
+    if(n < 1000000){
+      var v = n/1000;
+      var s = (v >= 100 ? v.toFixed(0) : v.toFixed(1)).replace(/\.0$/, "");
+      return s + "k";
+    }
+    var m = n/1000000;
+    var sm = (m >= 100 ? m.toFixed(0) : m.toFixed(1)).replace(/\.0$/, "");
+    return sm + "m";
+  }
+
+  function renderVisitorCount(){
+    var el = document.getElementById("visitorCount");
+    if(!el) return;
+    var display = isRevealed ? String(rawCount) : formatCompact(rawCount);
+    el.textContent = (currentLang === "en") ? toMonoFont(display) : display;
+  }
+
+  document.getElementById("visitorBtn").addEventListener("click", function(){
+    if(rawCount < 1000) return;
+    isRevealed = true;
+    renderVisitorCount();
+    clearTimeout(revealTimer);
+    revealTimer = setTimeout(function(){
+      isRevealed = false;
+      renderVisitorCount();
+    }, 3000);
+  });
+
+  fetch("https://abacus.jasoncameron.dev/hit/ilya-jlal-platform/visits")
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if(data && typeof data.value === "number"){
+        rawCount = data.value;
+        renderVisitorCount();
+      }
+    })
+    .catch(function(){});
+
+  applyLang("en");
+})();
+</script>
+
+</body>
+</html>
+
+<!-- Copyright 2026 ILYA / JLAL -->
