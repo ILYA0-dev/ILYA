@@ -2,29 +2,21 @@
 
 Videos are never edited or optimized by hand — this repo builds them.
 
-## ⚠️ Cloudflare Pages (direct upload, no Git)
-If you deploy by dragging a folder/zip into Cloudflare Pages, **the
-GitHub Action below never runs** — Cloudflare doesn't execute it.
-You must build locally first, THEN upload the result:
+## Your setup: GitHub → Cloudflare Pages (Git-connected)
+This is already wired to work automatically:
+1. Put a new/updated video in `img/source/` (e.g. `img/source/H.mp4`).
+2. `git push`.
+3. The `build-media` GitHub Action runs ffmpeg, regenerates
+   `img/*-lo.mp4`, `img/*-hi.mp4`, `img/*.jpg`, and commits them back.
+4. Cloudflare Pages detects that new commit and redeploys automatically.
 
-```
-node scripts/build-media.js
-```
+Nothing to run locally. Just push the source video and wait ~1–2 minutes
+for the Action + Cloudflare deploy to finish.
 
-Then upload the **whole project folder** (including the regenerated
-`img/*-lo.mp4`, `img/*-hi.mp4`, `img/*.jpg` files — not just
-`img/source/`). If `img/` is missing those files, the page will
-request videos that don't exist and nothing will show.
-
-## To replace or add a video
-1. Put the new file in `img/source/` (e.g. `img/source/H.mp4`).
-2. Run `node scripts/build-media.js` (requires `ffmpeg`).
-3. Upload the project (with the freshly built `img/` files) to Cloudflare.
-
-If instead your Cloudflare Pages project is connected to a GitHub repo
-via Git, you can skip step 2 — push to `img/source/**` and the
-`build-media` GitHub Action rebuilds and commits automatically; Cloudflare
-then picks up the new commit and deploys it.
+## If you ever switch to direct upload (no Git)
+Then the Action above won't run. You'd need to build locally first
+(`node scripts/build-media.js`, requires `ffmpeg`) and upload the whole
+`img/` folder yourself — not just `img/source/`.
 
 ## What it does, always
 - Strips audio (`-an`), regardless of whether the source has a track.

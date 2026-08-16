@@ -251,8 +251,8 @@
     --pad-top: clamp(20px, 5vw, 30px);
 
     background:
-      linear-gradient(180deg, rgba(14,4,4,.035), rgba(6,2,2,.05)),
-      radial-gradient(ellipse 130% 60% at 50% 0%, rgba(165,18,27,.05), transparent 62%);
+      linear-gradient(180deg, rgba(14,4,4,.07), rgba(6,2,2,.10)),
+      radial-gradient(ellipse 130% 60% at 50% 0%, rgba(165,18,27,.08), transparent 62%);
     border-radius: 24px;
     overflow: hidden;
 
@@ -508,37 +508,65 @@
     color: var(--red-hot);
   }
   .links a .ic{
+    position: relative;
+    z-index: 1;
     width: 17px;
     height: 17px;
     opacity: .92;
-    transition: opacity .25s var(--ease), transform .25s var(--ease), filter .3s var(--ease);
+    animation: iconGlow 3.2s ease-in-out infinite;
+    transition: opacity .25s var(--ease), transform .3s var(--ease), filter .3s var(--ease);
   }
-  .links a:hover .ic{ opacity: 1; }
+  .links a:hover .ic{ opacity: 1; transform: scale(1.08); }
 
-  .links a .spinner{
+  @keyframes iconGlow{
+    0%, 100%{ filter: drop-shadow(0 0 2.5px var(--glow, rgba(165,18,27,.45))); }
+    50%{ filter: drop-shadow(0 0 6px var(--glow, rgba(165,18,27,.6))); }
+  }
+
+  /* ring loader: sits AROUND the icon and only appears while waiting —
+     the icon itself is never hidden, so nothing "disappears" */
+  .links a .ring-loader{
     position: absolute;
-    inset: 0;
+    inset: -6px;
+    z-index: 2;
     opacity: 0;
-    transform: scale(.7);
-    transition: opacity .25s var(--ease), transform .25s var(--ease);
-    animation: spinSimple .75s linear infinite;
+    transform: scale(.6) rotate(0deg);
+    transition: opacity .25s var(--ease), transform .3s var(--ease);
+    color: var(--red-hot);
+    pointer-events: none;
+  }
+  .links a .ring-loader circle{
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 56;
+    stroke-dashoffset: 20;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: spinSimple .8s linear infinite;
   }
 
-  .ic-telegram{ filter: drop-shadow(0 0 4px rgba(42,171,238,.4)); }
-  .ic-youtube{ filter: drop-shadow(0 0 4px rgba(255,32,32,.4)); }
-  .ic-instagram{ filter: drop-shadow(0 0 4px rgba(225,48,108,.4)); }
-  .ic-pinterest{ filter: drop-shadow(0 0 4px rgba(230,0,35,.4)); }
-  .links a:hover .ic-telegram{ filter: drop-shadow(0 0 7px rgba(42,171,238,.65)); }
-  .links a:hover .ic-youtube{ filter: drop-shadow(0 0 7px rgba(255,32,32,.65)); }
-  .links a:hover .ic-instagram{ filter: drop-shadow(0 0 7px rgba(225,48,108,.65)); }
-  .links a:hover .ic-pinterest{ filter: drop-shadow(0 0 7px rgba(230,0,35,.65)); }
+  .ic-telegram{ --glow: rgba(42,171,238,.55); }
+  .ic-youtube{ --glow: rgba(255,32,32,.55); }
+  .ic-instagram{ --glow: rgba(225,48,108,.55); }
+  .ic-pinterest{ --glow: rgba(230,0,35,.55); }
+  .links a:hover .ic-telegram{ --glow: rgba(42,171,238,.85); }
+  .links a:hover .ic-youtube{ --glow: rgba(255,32,32,.85); }
+  .links a:hover .ic-instagram{ --glow: rgba(225,48,108,.85); }
+  .links a:hover .ic-pinterest{ --glow: rgba(230,0,35,.85); }
 
   .links a .zad-icon{
     width: 23px;
     height: 23px;
     object-fit: contain;
     filter: brightness(0) saturate(100%) invert(15%) sepia(85%) saturate(3800%) hue-rotate(348deg) brightness(95%) contrast(105%)
-            drop-shadow(0 0 3px rgba(255,69,80,.35));
+            drop-shadow(0 0 2.5px rgba(255,69,80,.5));
+    animation: zadGlow 3.2s ease-in-out infinite;
+  }
+  @keyframes zadGlow{
+    0%, 100%{ filter: brightness(0) saturate(100%) invert(15%) sepia(85%) saturate(3800%) hue-rotate(348deg) brightness(95%) contrast(105%) drop-shadow(0 0 2.5px rgba(255,69,80,.5)); }
+    50%{ filter: brightness(0) saturate(100%) invert(15%) sepia(85%) saturate(3800%) hue-rotate(348deg) brightness(95%) contrast(105%) drop-shadow(0 0 6px rgba(255,69,80,.7)); }
   }
 
   .links a.featured{
@@ -558,17 +586,29 @@
   .links a:nth-child(7){ animation-delay: .66s; }
   .links a:nth-child(8){ animation-delay: .72s; }
 
-  /* click-to-open feedback: the button never disappears — icon morphs
-     into a spinner while a slim progress line fills, then it settles
-     back smoothly once the link has opened */
+  /* click-to-open feedback: the icon is ALWAYS visible — it just
+     glows brighter and gets a rotating ring around it while waiting
+     (animation #2), on top of the bottom progress line (animation #1).
+     nothing is ever hidden or swapped, so there's no disappearing/pop. */
   .links a.opening{
     pointer-events: none;
     border-color: var(--red);
     color: var(--red-hot);
     box-shadow: 0 10px 24px -8px rgba(165,18,27,.45);
+    animation: openPulse 1s ease-in-out infinite;
   }
-  .links a.opening .ic{ opacity: 0; transform: scale(.55); }
-  .links a.opening .spinner{ opacity: 1; transform: scale(1); }
+  .links a.opening .ic{
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px var(--glow, rgba(255,69,80,.75))) !important;
+    animation: none;
+  }
+  .links a.opening .ring-loader{ opacity: 1; transform: scale(1) rotate(0deg); }
+
+  @keyframes openPulse{
+    0%, 100%{ box-shadow: 0 10px 24px -8px rgba(165,18,27,.45); }
+    50%{ box-shadow: 0 10px 26px -6px rgba(255,69,80,.65); }
+  }
 
   .links a .progress{
     position: absolute;
@@ -582,7 +622,14 @@
   }
   .links a.opening .progress{ opacity: 1; width: 100%; }
   .links a.opened .progress{ opacity: 0; transition: opacity .4s var(--ease); }
-  .links a.opened{ transition: border-color .5s var(--ease), color .5s var(--ease), box-shadow .5s var(--ease); }
+  .links a.opened{
+    transition: border-color .5s var(--ease), color .5s var(--ease), box-shadow .5s var(--ease);
+  }
+  .links a.opened .ic{
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px var(--glow, rgba(255,69,80,.85))) !important;
+    transition: transform .35s var(--ease), filter .35s var(--ease);
+  }
 
   .footer{
     font-family: var(--font-mono);
@@ -916,9 +963,10 @@
   });
 
   /* ============== link buttons: elegant open feedback ==============
-     the button itself never disappears — the icon smoothly morphs
-     into a spinner while a slim progress line fills over ~1s, then
-     everything eases back to its resting state once the link opens. */
+     the icon is never hidden or replaced — while waiting it glows
+     brighter and a thin ring rotates around it (animation #2), on top
+     of the bottom progress line (animation #1). link opens after ~1s,
+     then everything eases back smoothly — nothing pops or disappears. */
   document.querySelectorAll(".links a").forEach(function(a){
     var icon = a.querySelector("img.ic");
     if(!icon) return;
@@ -926,13 +974,13 @@
     var wrap = document.createElement("span");
     wrap.className = "icon-wrap";
     icon.parentNode.insertBefore(wrap, icon);
-    wrap.appendChild(icon);
 
-    var spinner = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    spinner.setAttribute("viewBox", "0 0 24 24");
-    spinner.setAttribute("class", "spinner");
-    spinner.innerHTML = '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="42" stroke-dashoffset="14"></circle>';
-    wrap.appendChild(spinner);
+    var ring = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    ring.setAttribute("viewBox", "0 0 24 24");
+    ring.setAttribute("class", "ring-loader");
+    ring.innerHTML = '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="56" stroke-dashoffset="20"></circle>';
+    wrap.appendChild(ring);
+    wrap.appendChild(icon);
 
     var progress = document.createElement("span");
     progress.className = "progress";
